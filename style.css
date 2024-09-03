@@ -5,6 +5,14 @@
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.text {
+  color: #333;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 .lightgray {
   background-color: lightgray;
 }
@@ -59,7 +67,6 @@
 }
 
 #about-game > p {
-  color: #333;
   margin-top: 10px;
   font-size: 1.12rem;
   line-height: 25px;
@@ -73,7 +80,8 @@
   align-items: flex-end;
 }
 
-#entity-img > div {
+#entity-img > div,
+#tips > div:nth-child(2) > div {
   box-shadow: 3px 3px 10px #333;
   text-align: center;
   width: 125px;
@@ -116,54 +124,60 @@
 
 #slideshow-inside {
   display: flex;
-  animation-name: move, snap;
-  animation-duration: 10s;
-  /* animation-delay: 2s; */
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: linear;
+  animation: move 10s linear infinite alternate both;
 }
 
 #slideshow-inside > img {
   width: 100%;
 }
 
-/* @keyframes move {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(-200%);
-  }
-} */
-
-@keyframes move {
-  95% {
-    transform: translateX(0);
-  }
-  98% {
-    transform: translateX(-100%);
-  }
-  99% {
-    transform: translateX(-100%);
-  }
+#tips {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  padding: 50px 0;
 }
 
-@keyframes snap {
-  96% {
-    scroll-snap-align: center;
+#tips > div:nth-child(1) > h2 {
+  margin-bottom: 10px;
+}
+
+#tips > div:nth-child(1) > ul > li {
+  margin-left: 30px;
+  line-height: 30px;
+}
+
+#tips > div:nth-child(1) > ul > ul > li {
+  margin-left: 50px;
+  line-height: 30px;
+}
+
+#tips > div:nth-child(2) {
+  margin-left: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+
+#tips > div:nth-child(2) > div > img {
+  width: 100%;
+}
+
+#footer {
+  padding: 20px 0;
+  text-align: center;
+}
+
+@keyframes move {
+  0%,
+  20% {
+    transform: translateX(0);
   }
-  97% {
-    scroll-snap-align: none;
+  40%,
+  60% {
+    transform: translateX(-100%);
   }
-  99% {
-    scroll-snap-align: none;
-  }
+  80%,
   100% {
-    scroll-snap-align: center;
+    transform: translateX(-200%);
   }
 }
