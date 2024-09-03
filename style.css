@@ -84,3 +84,86 @@
   height: 100%;
   width: 100%;
 }
+
+#reason {
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+#reason-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#reason-text > h2 {
+  margin-bottom: 20px;
+}
+
+#reason-text > ul {
+  margin-left: 40px;
+}
+
+#reason-text > ul > li {
+  margin-top: 20px;
+}
+
+#slideshow-outside {
+  width: 100%;
+  overflow: hidden;
+}
+
+#slideshow-inside {
+  display: flex;
+  animation-name: move, snap;
+  animation-duration: 10s;
+  /* animation-delay: 2s; */
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+#slideshow-inside > img {
+  width: 100%;
+}
+
+/* @keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+} */
+
+@keyframes move {
+  95% {
+    transform: translateX(0);
+  }
+  98% {
+    transform: translateX(-100%);
+  }
+  99% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes snap {
+  96% {
+    scroll-snap-align: center;
+  }
+  97% {
+    scroll-snap-align: none;
+  }
+  99% {
+    scroll-snap-align: none;
+  }
+  100% {
+    scroll-snap-align: center;
+  }
+}
