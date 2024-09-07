@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'outfit';
+  src: url(./fonts/Outfit/Outfit-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'outfit';
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+#container {
+  width: min(95%);
+  margin: auto;
+}
+
+#products {
+  display: grid;
+  /* gap: 20px; */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#products > div {
+  border: solid;
+}
+
+#products > div > h2 {
+  margin: 5px 0;
+}
+
+img {
+  height: 75%;
+  width: 100%;
+}
+
+@media (min-width: 801px) {
+  #container {
+    width: max(600px, 95%);
+    margin: auto;
+  }
+
+  #products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  #container {
+    width: min(95%, 1100px);
+    margin: auto;
+  }
+}
