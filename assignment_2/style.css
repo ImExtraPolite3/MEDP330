@@ -9,32 +9,68 @@
   font-family: 'outfit';
 }
 
-h1 {
-  margin: 10px 0;
+#container {
+  margin-bottom: 30px;
 }
 
-#container {
-  width: min(95%);
-  margin: auto;
+#header {
+  padding: 15px;
+  box-shadow: 0 0 10px 8px lightgray;
+}
+
+#search {
+  display: flex;
+  align-items: center;
+  background-color: lightgray;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+#search > img {
+  width: 20px;
+}
+
+#search-bar {
+  border: none;
+  background-color: inherit;
+  padding: 7px;
+  font-size: 1rem;
+  border-radius: 10px;
+  width: 100%;
+  outline: none;
+}
+
+.which {
+  font-size: 2rem;
+  margin: 15px;
 }
 
 #products {
+  width: min(95%);
+  margin: auto;
   display: grid;
-  /* gap: 20px; */
+  gap: 20px;
   grid-template-columns: repeat(2, 1fr);
 }
 
-#products > div {
-  border: solid;
+#products > div > h3 > a {
+  color: black;
+  text-decoration: none;
 }
 
-#products > div > h2 {
-  margin: 5px 0;
+#products > div > h3 > a:hover {
+  text-decoration: underline;
 }
 
-img {
-  height: 75%;
+#products > div > img {
   width: 100%;
+}
+
+.original-price {
+  text-decoration: line-through;
+  font-size: 0.9rem;
+  color: gray;
 }
 
 @media (min-width: 801px) {
