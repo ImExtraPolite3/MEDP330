@@ -16,6 +16,14 @@
 #header {
   padding: 15px;
   box-shadow: 0 0 10px 8px lightgray;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.8rem;
+  grid-column: 1 / 10;
 }
 
 #search {
@@ -25,6 +33,16 @@
   border-radius: 10px;
   margin-top: 10px;
   padding: 5px;
+  grid-column: 1 / 11;
+}
+
+#extra {
+  display: flex;
+  gap: 10px;
+}
+
+#extra > img {
+  width: 30px;
 }
 
 #search > img {
@@ -46,9 +64,18 @@
   margin: 15px;
 }
 
+.which,
 #products {
   width: min(95%);
   margin: auto;
+}
+
+.which {
+  font-size: 2rem;
+  margin: 15px auto;
+}
+
+#products {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(2, 1fr);
@@ -73,21 +100,62 @@
   color: gray;
 }
 
-@media (min-width: 801px) {
-  #container {
-    width: max(600px, 95%);
-    margin: auto;
-  }
+.wide {
+  display: none;
+}
 
+@media (min-width: 801px) {
   #products {
-    display: grid;
+    width: max(600px, 95%);
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (min-width: 1200px) {
-  #container {
+  #extra {
+    display: none;
+  }
+
+  #header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #header > div:nth-child(2) {
+    margin-left: 50px;
+    flex-grow: 2;
+  }
+
+  #header > div:nth-child(3) {
+    flex-grow: 4;
+  }
+
+  #nav > ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+
+  #nav > ul > li {
+    transition: transform 1s;
+  }
+
+  #nav > ul > li:hover {
+    transform: scale(1.2);
+    text-decoration: underline;
+  }
+
+  #products,
+  .which {
     width: min(95%, 1100px);
-    margin: auto;
+  }
+
+  #search {
+    margin-top: 0;
+  }
+
+  .wide {
+    display: block;
   }
 }
